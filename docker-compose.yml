@@ -4,13 +4,15 @@ services:
   app:
     container_name: whatsapp_web_api
     # build: .
-    image: chrishubert/whatsapp-web-api:latest # Pull the image from Docker Hub
+    image: whatsapp_web_api:latest
     restart: always
-    ports:
-      - "3000:3000"
+    #ports:
+    # - "3111:3111:"
+    network_mode: "host"
     environment:
+      - PORT=3111
       # - API_KEY=your_global_api_key_here  # OPTIONAL
-      - BASE_WEBHOOK_URL=http://localhost:3000/localCallbackExample
+      - BASE_WEBHOOK_URL=http://localhost:3111/localCallbackExample
       - ENABLE_LOCAL_CALLBACK_EXAMPLE=TRUE # OPTIONAL, NOT RECOMMENDED FOR PRODUCTION
       - MAX_ATTACHMENT_SIZE=5000000 # IN BYTES
       - SET_MESSAGES_AS_SEEN=TRUE # WILL MARK THE MESSAGES AS READ AUTOMATICALLY
@@ -24,3 +26,4 @@ services:
       # - RECOVER_SESSIONS=TRUE # OPTIONAL, SHOULD WE RECOVER THE SESSION IN CASE OF PAGE FAILURES
     volumes:
       - ./sessions:/usr/src/app/sessions # Mount the local ./sessions/ folder to the container's /usr/src/app/sessions folder
+

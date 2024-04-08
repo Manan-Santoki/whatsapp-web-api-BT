@@ -16,7 +16,7 @@
     "qr-image": "^3.2.0",
     "qrcode-terminal": "^0.12.0",
     "swagger-ui-express": "^4.6.3",
-    "whatsapp-web.js": "1.23.1-alpha.5"
+    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#webpack-exodus"
   },
   "devDependencies": {
     "eslint": "^8.38.0",
@@ -37,18 +37,18 @@
     "express",
     "axios"
   ],
-  "author": "Christophe Hubert",
+  "author": "BT",
   "license": "MIT",
   "engines": {
     "node": ">=14.17.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chrishubert/whatsapp-web-api.git"
+    "url": "https://github.com/Manan-Santoki/whatsapp-web-api-BT.git"
   },
   "bugs": {
-    "url": "https://github.com/chrishubert/whatsapp-web-api/issues"
+    "url": "https://github.com/Manan-Santoki/whatsapp-web-api-BT/issues"
   },
-  "homepage": "https://github.com/chrishubert/whatsapp-web-api",
+  "homepage": "https://github.com/Manan-Santoki/whatsapp-web-api-BT",
   "private": true
 }

@@ -14,19 +14,21 @@ RUN set -x \
     && apk add --no-cache \
     udev \
     ttf-freefont \
-    chromium
+    chromium \
+    git
 
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
 # Install the dependencies
-RUN npm ci --only=production --ignore-scripts
+#RUN npm ci --only=production --ignore-scripts
+RUN npm install
 
 # Copy the rest of the source code to the working directory
 COPY . .
 
 # Expose the port the API will run on
-EXPOSE 3000
+EXPOSE 3111
 
 # Start the API
 CMD ["npm", "start"]
